@@ -1,1 +1,1 @@
-INSERT INTO users (username, password) VALUES ($1, $2);
+INSERT INTO helousers  (username, password) VALUES ($1, $2);

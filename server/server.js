@@ -8,8 +8,8 @@ const controller = require ('./controller');
 const app = express();
 
 massive(process.env.CONNECTION_STRING)
-  .then(dbInstance => {
-   app.set('db', dbInstance)})
+  .then(db => {
+   app.set('db', db)})
   .catch(err => console.log(err));
 
 app.use(bodyParser.json());
