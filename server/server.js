@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 
 
 // users endpoints;
-app.post('/api/registerUser', controller.registerUser);
-app.post('/api/loginUser', controller.loginUser);
+app.post('/api/register-user', controller.register_user);
+app.post('/api/login-user', controller.login_user);
 
 
 

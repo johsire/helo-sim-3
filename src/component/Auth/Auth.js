@@ -31,30 +31,30 @@ class Auth extends Component {
     let { username, password } = this.state;
     console.log(username, password);
     axios
-      .post(`/api/registerUser`, {
+      .post('/api/register-user', {
         username,
         password
       })
-      .then(console.log(`submitted`))
-      .catch(err => console.log(err));
+      .then(console.log('registration submit'))
+      .catch(err => console.log('front-end error', err));
   }
 
   async handleLogin() {
     let { username, password } = this.state;
     console.log(username, password);
     await axios
-      .post(`/api/loginUser`, {
+      .post('/api/login-user', {
         username,
         password
       })
       .then(response => {
-        console.log(response);
+        console.log('from front end reponse', response);
         this.setState({ user: response.data });
       })
       .then(() => this.props.getUser(username, password))
       .catch(err => console.log(err));
 
-    this.props.history.push(`/dashboard`);
+    this.props.history.push('/dashboard');
   };
 
 

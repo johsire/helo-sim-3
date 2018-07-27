@@ -2,12 +2,12 @@
 const axiso = require('axios');
 
 module.exports = {
-  registerUser: (req, res, next) => {
+  register_user: (req, res, next) => {
     const db = req.app.get("db");
     let { username, password } = req.body;
     console.log('you are in!', req.body, username, password);
 
-    db.createUser([username, password]).then(response => {
+    db.create_user([username, password]).then(response => {
       res.status(200).send(response);
       console.log(response);
     })
@@ -17,11 +17,11 @@ module.exports = {
     });
 },
 
-   loginUser: (req, res, next) => {
+  login_user: (req, res, next) => {
     const db = req.app.get("db");
     let { username, password } = req.body;
 
-    db.login([username, password])
+    db.login_user([username, password])
     .then(response => {
       res.status(200).send(response);
       console.log('response coming from login', response);
