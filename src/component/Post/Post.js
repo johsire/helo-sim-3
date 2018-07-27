@@ -5,7 +5,7 @@ class Post extends Component {
   render() {
     return (
       <div>
-        Post
+        New Post
       </div>
     );
   }

@@ -14,4 +14,4 @@ export default (
     <Route component={ Post } path='/post/:postid' />
     <Route component={ Form } path='/new' />
   </Switch>
-)
+);
