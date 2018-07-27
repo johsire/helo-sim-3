@@ -15,6 +15,11 @@ massive(process.env.CONNECTION_STRING)
 app.use(bodyParser.json());
 
 
+// users endpoints;
+app.post('/api/registerUser', controller.registerUser);
+app.post('/api/loginUser', controller.loginUser);
+
+
 
 
 const SERVER_PORT = process.env.SERVER_PORT || 5000;

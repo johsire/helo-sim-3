@@ -31,7 +31,7 @@ class Auth extends Component {
     let { username, password } = this.state;
     console.log(username, password);
     axios
-      .post(`/api/register`, {
+      .post(`/api/registerUser`, {
         username,
         password
       })
@@ -43,7 +43,7 @@ class Auth extends Component {
     let { username, password } = this.state;
     console.log(username, password);
     await axios
-      .post(`/api/login`, {
+      .post(`/api/loginUser`, {
         username,
         password
       })
