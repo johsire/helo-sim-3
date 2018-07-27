@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import axios from "axios";
-
+import {connect} from 'react-redux';
+import { updateUserData } from '../../ducks/reducer';
 
 
 class Auth extends Component {
   constructor(props) {
     super(props);
+    
+    componentDidMount(); {
+      axios.get('/api/user-data').then(res => {
+        this.props.updateUserData(res.data);
+      });
+    };
+
 
     this.state = {
       username: "",
@@ -59,6 +67,7 @@ class Auth extends Component {
 
 
   render() {
+    let {user} = this.props
     return (
       <div>
         <div className="input-box">
@@ -79,5 +88,10 @@ class Auth extends Component {
   }
 }
 
-export default Auth;
+function mapStateToProps(state) {
+  return {
+    user: state.user,
+  }
+};
 
+export default connect(mapStateToProps, {updateUserData})(Auth);
