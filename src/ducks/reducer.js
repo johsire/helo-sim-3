@@ -8,6 +8,7 @@ const initialState = {
 
 const  UPDATE_USER_NAME = 'UPDATE_USER_NAME';
 
+
 export function updateUserName(username) {
   return {
     type: UPDATE_USER_NAME,
@@ -24,4 +25,3 @@ export default function reducer(state = initialState, action) {
       return state;
   }
 };
-
