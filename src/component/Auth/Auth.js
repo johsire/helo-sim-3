@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Auth from './Auth';
+
 
 
 class Auth extends Component {
